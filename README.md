@@ -1,0 +1,19 @@
+- Define and specify IMU and EMG windows’ parameters
+- Get IMU and filter IMU data
+- Get EMG data
+    - Check for new maximum value in each channel’s window
+    - Normalize EMG data by maximum value as it goes
+    - Filter EMG data
+- Get sensitive axis for Gyroscope and Accelerometer data for each window by 
+    - Getting sum of all the absolute values in the window
+    - The sensitive axis is the one with the highest sum.
+- Analyze Gyroscope and Accelerometers sensitive axis data:
+    - Use peak finding algorithm to identify peaks and its pointing direction
+    - The pointing direction and the magnitude of the left tail-to-peak side are used along with the order among peaks can be used to determine heel-strike and toeoff from Gyroscope data.
+    - The labels of the events are returned
+- Analyze two EMG channels to determine peak as above as well as threshold to find contraction duration:
+    - For each EMG channel, if the signal is above the threshold and the counting is not started, the duration starts to count.
+    - If the counting is started and the signal is below the threshold, the counting stops and return “end” signal.
+    - The labels of the events are returned
+- The return labels from the process of analyzing gyroscope, accelerometers, and EMG data can be used to activate biofeedback signal.
+
