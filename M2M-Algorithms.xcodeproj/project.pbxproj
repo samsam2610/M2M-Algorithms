@@ -15,6 +15,14 @@
 		22684AF62102FEC40063D2F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22684AF42102FEC40063D2F8 /* LaunchScreen.storyboard */; };
 		22684B012102FEC50063D2F8 /* M2M_AlgorithmsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22684B002102FEC50063D2F8 /* M2M_AlgorithmsTests.swift */; };
 		22684B0C2102FEC50063D2F8 /* M2M_AlgorithmsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22684B0B2102FEC50063D2F8 /* M2M_AlgorithmsUITests.swift */; };
+		22A950782103A5930037EC84 /* DataProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A9506E2103A5930037EC84 /* DataProcess.swift */; };
+		22A950792103A5930037EC84 /* EMG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A950702103A5930037EC84 /* EMG.swift */; };
+		22A9507A2103A5930037EC84 /* GaitEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A950712103A5930037EC84 /* GaitEvent.swift */; };
+		22A9507B2103A5930037EC84 /* IMU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A950722103A5930037EC84 /* IMU.swift */; };
+		22A9507C2103A5930037EC84 /* ultilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A950742103A5930037EC84 /* ultilities.swift */; };
+		22A9507D2103A5930037EC84 /* Threshold.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A950752103A5930037EC84 /* Threshold.swift */; };
+		22A9507E2103A5930037EC84 /* PeakFinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A950762103A5930037EC84 /* PeakFinding.swift */; };
+		22A9507F2103A5930037EC84 /* filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A950772103A5930037EC84 /* filters.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +57,14 @@
 		22684B072102FEC50063D2F8 /* M2M-AlgorithmsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "M2M-AlgorithmsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22684B0B2102FEC50063D2F8 /* M2M_AlgorithmsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M2M_AlgorithmsUITests.swift; sourceTree = "<group>"; };
 		22684B0D2102FEC50063D2F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22A9506E2103A5930037EC84 /* DataProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProcess.swift; sourceTree = "<group>"; };
+		22A950702103A5930037EC84 /* EMG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EMG.swift; sourceTree = "<group>"; };
+		22A950712103A5930037EC84 /* GaitEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GaitEvent.swift; sourceTree = "<group>"; };
+		22A950722103A5930037EC84 /* IMU.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMU.swift; sourceTree = "<group>"; };
+		22A950742103A5930037EC84 /* ultilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ultilities.swift; sourceTree = "<group>"; };
+		22A950752103A5930037EC84 /* Threshold.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Threshold.swift; sourceTree = "<group>"; };
+		22A950762103A5930037EC84 /* PeakFinding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeakFinding.swift; sourceTree = "<group>"; };
+		22A950772103A5930037EC84 /* filters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = filters.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +115,7 @@
 		22684AE72102FEC40063D2F8 /* M2M-Algorithms */ = {
 			isa = PBXGroup;
 			children = (
+				22A9506C2103A5930037EC84 /* Algorithm */,
 				22684AE82102FEC40063D2F8 /* AppDelegate.swift */,
 				22684AEA2102FEC40063D2F8 /* ViewController.swift */,
 				22684AEC2102FEC40063D2F8 /* Main.storyboard */,
@@ -126,6 +143,45 @@
 				22684B0D2102FEC50063D2F8 /* Info.plist */,
 			);
 			path = "M2M-AlgorithmsUITests";
+			sourceTree = "<group>";
+		};
+		22A9506C2103A5930037EC84 /* Algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				22A9506D2103A5930037EC84 /* Data Process */,
+				22A9506F2103A5930037EC84 /* Data Formats */,
+				22A950732103A5930037EC84 /* helpers */,
+			);
+			path = Algorithm;
+			sourceTree = "<group>";
+		};
+		22A9506D2103A5930037EC84 /* Data Process */ = {
+			isa = PBXGroup;
+			children = (
+				22A9506E2103A5930037EC84 /* DataProcess.swift */,
+			);
+			path = "Data Process";
+			sourceTree = "<group>";
+		};
+		22A9506F2103A5930037EC84 /* Data Formats */ = {
+			isa = PBXGroup;
+			children = (
+				22A950702103A5930037EC84 /* EMG.swift */,
+				22A950712103A5930037EC84 /* GaitEvent.swift */,
+				22A950722103A5930037EC84 /* IMU.swift */,
+			);
+			path = "Data Formats";
+			sourceTree = "<group>";
+		};
+		22A950732103A5930037EC84 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				22A950742103A5930037EC84 /* ultilities.swift */,
+				22A950752103A5930037EC84 /* Threshold.swift */,
+				22A950762103A5930037EC84 /* PeakFinding.swift */,
+				22A950772103A5930037EC84 /* filters.swift */,
+			);
+			path = helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +316,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				22684AF12102FEC40063D2F8 /* M2M_Algorithms.xcdatamodeld in Sources */,
+				22A9507F2103A5930037EC84 /* filters.swift in Sources */,
+				22A950792103A5930037EC84 /* EMG.swift in Sources */,
+				22A950782103A5930037EC84 /* DataProcess.swift in Sources */,
+				22A9507C2103A5930037EC84 /* ultilities.swift in Sources */,
+				22A9507A2103A5930037EC84 /* GaitEvent.swift in Sources */,
+				22A9507D2103A5930037EC84 /* Threshold.swift in Sources */,
+				22A9507E2103A5930037EC84 /* PeakFinding.swift in Sources */,
 				22684AEB2102FEC40063D2F8 /* ViewController.swift in Sources */,
+				22A9507B2103A5930037EC84 /* IMU.swift in Sources */,
 				22684AE92102FEC40063D2F8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
