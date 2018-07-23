@@ -42,7 +42,7 @@ class GaitEvent {
     var outputContractHamstring: String = "None"
     var outputPeakQuadriceps: String = "None"
     var outputContractQuadriceps: String = "None"
-
+    
     
     var dataEvent: [[Any]] = []
     
@@ -63,7 +63,7 @@ class GaitEvent {
         contractHamstring = Threshold(thresholdValue: contractThresholdHamstring)
         contractQuadriceps = Threshold(thresholdValue: contractThresholdQuadriceps)
     }
-        
+    
     func currentIMU(IMU: IMU) {
         gyro = IMU.sensitiveGyro
         accel = IMU.sensitiveAccel
@@ -114,9 +114,9 @@ class GaitEvent {
         let localDiff: Float
         (localValue, localTime, localSign, localDiff) = peakAccel.check()
         outputAccel = peakFilter(localValue, localTime, localSign, localDiff,
-                                eventLabel: "Accel 1",
-                                localThresholdDiff: 0, localThresholdSign: 1,
-                                localThresholdValue: abs(thresholdAccel))
+                                 eventLabel: "Accel 1",
+                                 localThresholdDiff: 0, localThresholdSign: 1,
+                                 localThresholdValue: abs(thresholdAccel))
         
     }
     
@@ -131,9 +131,9 @@ class GaitEvent {
         let localDiff: Float
         (localValue, localTime, localSign, localDiff) = peakHamstring.check()
         outputPeakHamstring = peakFilter(localValue, localTime, localSign, localDiff,
-                                 eventLabel: "Hamstring",
-                                 localThresholdDiff: 0.2, localThresholdSign: 1,
-                                 localThresholdValue: thresholdHamstring)
+                                         eventLabel: "Hamstring",
+                                         localThresholdDiff: 0.2, localThresholdSign: 1,
+                                         localThresholdValue: thresholdHamstring)
         
         contractHamstring.add(value: hamstring.last!, time: time.last!)
         let contractStart: Float
@@ -154,17 +154,17 @@ class GaitEvent {
         let localDiff: Float
         (localValue, localTime, localSign, localDiff) = peakQuadriceps.check()
         outputPeakQuadriceps = peakFilter(localValue, localTime, localSign, localDiff,
-                                         eventLabel: "Quadriceps",
-                                         localThresholdDiff: 0.2, localThresholdSign: 1,
-                                         localThresholdValue: thresholdQuadriceps)
+                                          eventLabel: "Quadriceps",
+                                          localThresholdDiff: 0.2, localThresholdSign: 1,
+                                          localThresholdValue: thresholdQuadriceps)
         
         contractQuadriceps.add(value: quadriceps.last!, time: time.last!)
         let contractStart: Float
         let contractEnd: Float
-        (_ , contractStart, contractEnd) = contractHamstring.check()
+        (_ , contractStart, contractEnd) = contractQuadriceps.check()
         outputContractQuadriceps = thresholdFilter(eventStart: contractStart, eventEnd: contractEnd, eventLabel: "Quadriceps")
         
     }
-
+    
     
 }

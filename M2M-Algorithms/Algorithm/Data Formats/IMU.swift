@@ -42,9 +42,9 @@ class IMU {
         
         (queueAx, queueAy, queueAz) = emptyXYZQueue(maxSize: maxSize, value: specialValue)
         (filteredAx, filteredAy, filteredAz) = emptyXYZQueue(maxSize: maxSize, value: specialValue)
-
+        
         (sensitiveGyro, sensitiveAccel, time) = emptyXYZQueue(maxSize: maxSize, value: specialValue)
-
+        
     }
     
     func delete() {

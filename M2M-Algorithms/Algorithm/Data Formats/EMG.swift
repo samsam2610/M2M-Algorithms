@@ -76,4 +76,9 @@ class EMG {
         self.normalizeQuadriceps()
         filteredQuadriceps = queueQuadriceps
     }
+    
+    func resetMax () {
+        currentMaxQuadriceps = 0
+        currentMaxHamstring = 0
+    }
 }
